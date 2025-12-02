@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+        }
+
+        header {
+            background-color: #4b7bec;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .project-card {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #4b7bec;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>saparna</h1>
+        <p>Web Developer | Programmer | Designer</p>
+    </header>
+
+    <section>
+        <h2>About Me</h2>
+        <p>I am a passionate web developer skilled in creating simple and clean websites.</p>
+    </section>
+    <section>
+        <h2>Skill</h2>
+        <p>HTML,CSS,JavaScript,Python</p>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+
+        <div class="project-card" onclick="showMsg()">
+            <h3>Weather App</h3>
+            <p>A simple weather app that shows real-time weather data.</p>
+        </div>
+        <div class="project-card" onclick="showMsg()">
+            <h3>Portfolio Website</h3>
+            <p>A basic portfolio made with HTML, CSS, and JavaScript.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 saparna | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function showMsg() {
+            alert("Project clicked!");
+        }
+    </script>
+
+</body>
+</html>
+
+
+//food
+<!DOCTYPE html>
+<html>
+
+</head>
+<body>
+
+    <h2>Food Delivery Menu</h2>
+
+    <div class="menu">
+        <div class="item">
+            <h4>Pizza</h4>
+            <p>₹150</p>
+            <button onclick="addOrder('Pizza',150)">Add</button>
+        </div>
+
+        <div class="item">
+            <h4>Burger</h4>
+            <p>₹80</p>
+            <button onclick="addOrder('Burger',80)">Add</button>
+        </div>
+
+        <div class="item">
+            <h4>Fried Rice</h4>
+            <p>₹120</p>
+            <button onclick="addOrder('Fried Rice',120)">Add</button>
+        </div>
+    </div>
+
+    <div id="orderList">
+        <h3>Your Order:</h3>
+        <ul id="items"></ul>
+        <h4>Total: ₹<span id="total">0</span></h4>
+    </div>
+
+    <script>
+        let total = 0;
+
+        function addOrder(name, price) {
+            let list = document.getElementById("items");
+
+            let li = document.createElement("li");
+            li.innerText =`${name} - ₹${price}`;
+            list.appendChild(li);
+
+            total += price;
+            document.getElementById("total").innerText = total;
+        }
+    </script>
+
+</body>
+</html>
+
+
+//foodorder
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Order Notification</title>
+</head>
+
+<body>
+
+    <h2>Food Order System</h2>
+
+    <p>Select a food and click Add:</p>
+
+    <button onclick="addFood('Pizza')">Add Pizza</button><br><br>
+    <button onclick="addFood('Burger')">Add Burger</button><br><br>
+    <button onclick="addFood('Fried Rice')">Add Fried Rice</button><br><br>
+    <button onclick="addFood('Noodles')">Add Noodles</button><br><br>
+
+    <button onclick="startOrder()">Start Delivery Process</button>
+
+    <script>
+        // Show which food is added
+        function addFood(foodName) {
+            alert(foodName + " added to your order!");
+        }
+
+        // Delivery notifications
+        function startOrder() {
+            alert("Order Placed");
+
+            setTimeout(function() {
+                alert("Order Accepted");
+            }, 2000);
+
+            setTimeout(function() {
+                alert("Food is Being Prepared");
+            }, 4000);
+
+            setTimeout(function() {
+                alert("Out for Delivery");
+            }, 6000);
+
+            setTimeout(function() {
+                alert("Order Delivered");
+            }, 8000);
+        }
+    </script>
+
+</body>
+</html>
+
+//leave
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leave Management System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .box {
+            border: 1px solid black;
+            padding: 15px;
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            margin-top: 5px;
+            padding: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Simple Leave Management System</h2>
+
+    <div class="box">
+
+        <p><b>Available Leaves:</b></p>
+        <p>Casual Leave: <span id="casual">5</span></p>
+        <p>Medical Leave: <span id="medical">3</span></p>
+
+        <h3>Apply for Leave</h3>
+
+        <label>Leave Type</label>
+        <select id="leaveType">
+            <option value="casual">Casual Leave</option>
+            <option value="medical">Medical Leave</option>
+        </select>
+
+        <label>Start Date</label>
+        <input type="date" id="start">
+
+        <label>End Date</label>
+        <input type="date" id="end">
+
+        <label>Reason</label>
+        <textarea id="reason"></textarea>
+
+        <button onclick="applyLeave()">Apply Leave</button>
+    </div>
+
+    <script>
+        let casualLeave = 5;
+        let medicalLeave = 3;
+
+        function applyLeave() {
+            let type = document.getElementById("leaveType").value;
+            let start = document.getElementById("start").value;
+            let end = document.getElementById("end").value;
+            let reason = document.getElementById("reason").value;
+
+            if (!start || !end || !reason) {
+                alert("Please fill all fields!");
+                return;
+            }
+
+            if (type === "casual") {
+                if (casualLeave > 0) {
+                    casualLeave--;
+                    document.getElementById("casual").innerText = casualLeave;
+                    alert("Casual Leave Applied Successfully!");
+                } else {
+                    alert("No Casual Leaves Left!");
+                }
+            }
+
+            if (type === "medical") {
+                if (medicalLeave > 0) {
+                    medicalLeave--;
+                    document.getElementById("medical").innerText = medicalLeave;
+                    alert("Medical Leave Applied Successfully!");
+                } else {
+                    alert("No Medical Leaves Left!");
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+//project
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Management Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .task-box {
+            border: 1px solid #000;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        input, select {
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 6px 10px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Project Management Dashboard</h2>
+
+    <h3>Add New Task</h3>
+    <input type="text" id="taskName" placeholder="Enter Task Name">
+    <button onclick="addTask()">Add Task</button>
+
+    <h3>Task List</h3>
+    <div id="taskList"></div>
+
+    <script>
+        function addTask() {
+            let name = document.getElementById("taskName").value;
+
+            if (name === "") {
+                alert("Task name cannot be empty");
+                return;
+            }
+
+            // Task container
+            let taskDiv = document.createElement("div");
+            taskDiv.className = "task-box";
+
+            // Task name label
+            let label = document.createElement("span");
+            label.textContent = name + " — Status: ";
+
+            // Status dropdown
+            let select = document.createElement("select");
+            select.innerHTML = `
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            `;
+
+            taskDiv.appendChild(label);
+            taskDiv.appendChild(select);
+            document.getElementById("taskList").appendChild(taskDiv);
+
+            document.getElementById("taskName").value = "";
+        }
+    </script>
+
+</body>
+</html>
+
+//survey
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Survey Application</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .question-box {
+            border: 1px solid #ccc;
+            padding: 12px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Online Survey</h2>
+
+    <div id="surveyContainer"></div>
+
+    <button onclick="submitSurvey()">Submit Survey</button>
+
+    <h3>Responses:</h3>
+    <div id="result"></div>
+
+    <script>
+        // All Questions
+        const allQuestions = [
+            "What is your favorite food?",
+            "How many hours do you use the internet daily?",
+            "Which mobile brand do you prefer?",
+            "What is your favorite movie genre?",
+            "How often do you exercise?",
+            "Do you prefer online classes or offline classes?",
+            "What social media do you use most?",
+            "How many hours do you sleep per day?",
+            "What type of music do you enjoy?",
+            "Do you like traveling?"
+        ];
+
+        // Select 5 random questions
+        const selected = allQuestions.sort(() => 0.5 - Math.random()).slice(0, 5);
+
+        const container = document.getElementById("surveyContainer");
+
+        // Display the 5 selected questions
+        selected.forEach((q, index) => {
+            let div = document.createElement("div");
+            div.className = "question-box";
+
+            div.innerHTML = `
+                <p><b>Q${index + 1}:</b> ${q}</p>
+                <input type="text" id="ans${index}" placeholder="Your answer" style="width: 95%;">
+            `;
+            container.appendChild(div);
+        });
+
+        // Submit survey and show responses
+        function submitSurvey() {
+            let output = "<ul>";
+
+            selected.forEach((q, i) => {
+                let ans = document.getElementById("ans" + i).value;
+                output += `<li><b>${q}</b> — ${ans}</li>`;
+            });
+
+            output += "</ul>";
+            document.getElementById("result").innerHTML = output;
+        }
+    </script>
+
+</body>
+</html>
