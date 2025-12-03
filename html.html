@@ -205,6 +205,33 @@
 <html>
 <head>
     <title>Food Order Notification</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 8px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -221,12 +248,10 @@
     <button onclick="startOrder()">Start Delivery Process</button>
 
     <script>
-        // Show which food is added
         function addFood(foodName) {
             alert(foodName + " added to your order!");
         }
 
-        // Delivery notifications
         function startOrder() {
             alert("Order Placed");
 
